@@ -29,7 +29,6 @@ class UsersController < ApplicationController
   end
 
   get '/login' do
-binding.pry
     if Helpers.is_logged_in?(session)
       redirect to '/tweets'
     else
@@ -39,6 +38,7 @@ binding.pry
 
 
   post '/login' do
+    binding.pry
   @user = User.find_by(:username => params[:username])
     if @user != nil && @user.password == params[:password]
       session[:user_id] = @user.id
