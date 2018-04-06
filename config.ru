@@ -14,6 +14,3 @@ run ApplicationController
 run ApplicationController
 use UsersController
 
-task :console do
-  Pry.start
-end
