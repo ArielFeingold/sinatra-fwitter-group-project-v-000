@@ -51,7 +51,6 @@ binding.pry
   get '/signup' do
     erb :'users/create_user'
   end
-
   post '/signup' do
     @user = User.create(params)
     session[:user_id] = @user.id
