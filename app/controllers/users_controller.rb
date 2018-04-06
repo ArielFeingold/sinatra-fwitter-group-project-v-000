@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   get '/signup' do
-    if Helpers.is_logged_in?(session)
+    if !Helpers.is_logged_in?(session)
       erb :'users/create_user'
     else
       redirect to '/tweets'
