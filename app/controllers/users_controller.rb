@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   get '/signup' do
-    if session[:user_id].to_s.empty?
+    if Helpers.is_logged_in?(session)
       erb :'users/create_user'
     else
       redirect to '/tweets'
