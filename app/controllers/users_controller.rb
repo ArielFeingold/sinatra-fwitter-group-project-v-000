@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   end
 
   get '/login' do
-
+binding.pry
     if Helpers.is_logged_in?(session)
       redirect to '/tweets'
     else
